@@ -1,0 +1,132 @@
+/* Human-Centered AI for Health @ ICLR 2027: site-specific overrides on top of the template styles. */
+
+/* ICLR wordmark in the header (the SVG is dark gray; the template's dark-theme rule inverts it). */
+.site-navbar-logo {
+  display: block;
+  width: auto;
+  height: 56px;
+}
+
+.site-navbar-title {
+  font-size: 1.35rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .site-navbar-logo {
+    height: 44px;
+  }
+
+  .site-navbar-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* ICLR wordmark in the dark footer. */
+.site-footer-logo a {
+  display: block;
+}
+
+.site-footer-logo img {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Two advisory members: keep the grid centered and tidy. */
+#advisory-committee .genai-people-grid {
+  grid-template-columns: repeat(auto-fit, 200px);
+}
+
+/* Phones: let the long title wrap to two lines and stop short of the theme switcher. */
+@media (max-width: 767px) {
+  .navbar-title-group {
+    max-width: calc(100% - 112px);
+  }
+
+  .site-navbar-logo {
+    height: 36px;
+  }
+
+  .site-navbar-title {
+    font-size: 0.98rem;
+    line-height: 1.15;
+    white-space: normal;
+  }
+}
+
+/* Hero background: Unsplash photo OIEwRhozdq8 by Jose Antonio Rodriguez Davia (Unsplash License),
+   darkened; tune the template's green accents to the photo's deep teal. */
+.health-hero,
+html[data-theme="dark"] .health-hero {
+  background: #020c10;
+  border-bottom-color: rgba(120, 220, 230, 0.28);
+}
+
+.health-hero-art {
+  background-color: #020c10;
+}
+
+.health-hero .display-text-palatino,
+.health-hero .hero-workshop-text,
+html[data-theme="dark"] .health-hero .display-text-palatino,
+html[data-theme="dark"] .health-hero .hero-workshop-text {
+  color: #f0fbfc;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.9);
+}
+
+.health-wave-line {
+  stroke: #8fe3ea;
+}
+
+/* The photo already carries neuron structure; keep the template's line art but quieter. */
+.health-network,
+.health-brain,
+.health-clinical-panel,
+.health-projection,
+.health-data-streams {
+  opacity: 0.5;
+}
+
+/* FAQ */
+.site-faq {
+  margin: var(--space-4) 0 var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.site-faq details {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-faq summary {
+  cursor: pointer;
+  padding: 0.85rem 0;
+  font-weight: 600;
+  color: var(--text);
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.site-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.site-faq summary::before {
+  content: "+";
+  flex: 0 0 auto;
+  width: 1.1rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.site-faq details[open] summary::before {
+  content: "\2013";
+}
+
+.site-faq summary:hover {
+  color: var(--accent);
+}
+
+.site-faq details p {
+  margin: 0 0 1rem 1.7rem;
+}

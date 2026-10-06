@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Human-Centered AI for Health @ ICLR 2027</title>
+  <meta name="title" content="Human-Centered AI for Health @ ICLR 2027">
+  <meta name="description" content="ICLR 2027 Workshop on Human-Centered AI for Health: Multimodal Learning and Self-Evolving Agents. April 29, 2027, San Francisco, California, USA.">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Human-Centered AI for Health @ ICLR 2027">
+  <meta property="og:description" content="Multimodal Learning and Self-Evolving Agents for healthcare AI that remains useful and accountable to clinicians, patients, and caregivers.">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Human-Centered AI for Health @ ICLR 2027">
+  <meta name="twitter:description" content="Multimodal Learning and Self-Evolving Agents for healthcare AI that remains useful and accountable to clinicians, patients, and caregivers.">
+  <script>
+    (function () {
+      const key = 'hcai4health-theme';
+      const choice = ['light', 'dark'].includes(localStorage.getItem(key))
+        ? localStorage.getItem(key)
+        : 'light';
+      const theme = choice;
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.themeChoice = choice;
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles/css/reset.css">
+  <link rel="stylesheet" href="styles/css/main.css?v=iclr2027">
+  <link rel="stylesheet" href="styles/css/animations.css">
+  <link rel="stylesheet" href="styles/css/responsive.css">
+  <link rel="stylesheet" href="styles/css/site.css?v=iclr2027">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="images/iclr.svg">
+  <style>
+    @media (max-width: 991px) {
+      #navbar {
+        display: none !important;
+      }
+    }
+
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    /* Schedule cards hover effects */
+    .schedule-card {
+      transition: all var(--transition-fast);
+    }
+
+    .schedule-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: scale(1.02);
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex header sticky-top">
+    <div class="navbar-container">
+      <div class="navbar-title-group"
+        style="display: flex; width: 100%; flex-direction: row; align-items: center; justify-content: flex-start; gap: 1rem;">
+        <a href="https://iclr.cc/Conferences/2027" target="_blank" rel="noopener noreferrer" class="navbar-logo">
+          <img src="images/iclr.svg" alt="ICLR 2027" class="site-navbar-logo">
+        </a>
+        <a href="#home" class="navbar-title site-navbar-title" style="color: var(--color-primary); font-weight: bold; font-family: 'Palatino', 'Palatino Linotype', serif; display: flex; align-items: center; justify-content: flex-start; width: auto; gap: 1rem;">Human-Centered AI for Health</a>
+      </div>
+
+      <nav id="navbar" class="navbar" style="display: flex; justify-content: flex-end;">
+        <a class="nav-link scrollto" href="#speakers">Speakers</a>
+        <a class="nav-link scrollto" href="#schedule">Agenda</a>
+        <a class="nav-link scrollto" href="#call-for-papers">Call for Papers</a>
+        <a class="nav-link scrollto" href="#organizers">Organizers</a>
+      </nav>
+      <div class="theme-switcher" role="group" aria-label="Theme">
+        <button class="theme-option" type="button" data-theme-option="light" aria-pressed="false" title="Light theme">
+          <i class="bi bi-sun" aria-hidden="true"></i>
+          <span>Light</span>
+        </button>
+        <button class="theme-option" type="button" data-theme-option="dark" aria-pressed="false" title="Dark theme">
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+          <span>Dark</span>
+        </button>
+      </div>
+    </div>
+  </header><!-- End Header -->
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero health-hero fade-in">
+      <div class="health-hero-art" aria-hidden="true">
+        <svg class="health-illustration-source" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="presentation">
+          <defs>
+            <linearGradient id="healthWash" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#fcfeff" />
+              <stop offset="0.56" stop-color="#eaf6ff" />
+              <stop offset="1" stop-color="#cdeaff" />
+            </linearGradient>
+            <radialGradient id="healthGlow" cx="50%" cy="44%" r="58%">
+              <stop offset="0" stop-color="#ffffff" stop-opacity="0.96" />
+              <stop offset="0.72" stop-color="#eff9ff" stop-opacity="0.52" />
+              <stop offset="1" stop-color="#c6e7fb" stop-opacity="0" />
+            </radialGradient>
+            <linearGradient id="panelStroke" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e5f6ff" stop-opacity="0.96" />
+              <stop offset="1" stop-color="#8bc8ef" stop-opacity="0.5" />
+            </linearGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <rect width="1600" height="900" fill="url(#healthWash)" />
+          <rect width="1600" height="900" fill="url(#healthGlow)" />
+          <g class="health-network health-network-left">
+            <path d="M0 228 L125 270 L216 198 L302 266 L414 230 L510 322" />
+            <path d="M0 366 L108 336 L206 395 L312 344 L420 405 L530 352" />
+            <path d="M16 525 L126 464 L237 508 L338 450 L448 514 L560 468" />
+            <path d="M68 171 L126 270 L206 395 L237 508" />
+            <path d="M302 266 L312 344 L338 450" />
+            <path d="M414 230 L420 405 L448 514" />
+            <g class="health-nodes">
+              <circle cx="125" cy="270" r="7" /><circle cx="216" cy="198" r="5" />
+              <circle cx="302" cy="266" r="6" /><circle cx="206" cy="395" r="7" />
+              <circle cx="312" cy="344" r="5" /><circle cx="126" cy="464" r="6" />
+              <circle cx="338" cy="450" r="7" /><circle cx="448" cy="514" r="5" />
+            </g>
+          </g>
+          <g class="health-brain" filter="url(#softGlow)" transform="translate(42 66) scale(0.84)">
+            <path class="health-profile" d="M111 651 C88 611 80 562 92 514 C104 465 131 426 175 402 C220 377 275 380 316 410 C353 437 370 476 366 520 C364 545 374 563 394 578 L421 599 L416 622 L385 630 L385 661 L350 661 C342 708 313 742 266 756 L204 756 C170 731 141 698 111 651 Z" />
+            <path class="health-circuit" d="M148 500 C171 469 208 453 244 466 C279 478 299 511 293 546 C288 575 269 593 246 609 L246 704 M173 503 L173 598 L207 598 L207 692 M270 490 L270 531 L310 531 M132 558 L157 558 L157 648 L190 648" />
+            <path class="health-circuit" d="M181 479 L211 508 L245 480 L279 516 M147 581 L192 554 L237 579 L282 551" />
+            <g class="health-brain-nodes">
+              <circle cx="171" cy="496" r="5" /><circle cx="211" cy="506" r="5" />
+              <circle cx="246" cy="477" r="5" /><circle cx="281" cy="514" r="5" />
+              <circle cx="155" cy="556" r="5" /><circle cx="193" cy="552" r="5" />
+              <circle cx="239" cy="578" r="5" /><circle cx="286" cy="548" r="5" />
+              <circle cx="207" cy="692" r="5" /><circle cx="246" cy="704" r="5" />
+            </g>
+            <text x="211" y="558" text-anchor="middle">AI</text>
+          </g>
+          <g class="health-medical-icons">
+            <g class="health-icon health-icon-heart"><circle cx="116" cy="305" r="40" /><path d="M92 304 L104 304 L111 289 L121 323 L130 299 L143 299" /></g>
+            <g class="health-icon health-icon-dna"><circle cx="327" cy="326" r="38" /><path d="M314 302 C339 313 339 337 314 350 M340 302 C315 313 315 337 340 350 M318 310 L336 310 M318 321 L336 321 M318 333 L336 333 M318 343 L336 343" /></g>
+            <g class="health-icon health-icon-plus"><circle cx="79" cy="671" r="37" /><path d="M79 650 L79 692 M58 671 L100 671" /></g>
+            <g class="health-icon health-icon-pill"><circle cx="330" cy="734" r="37" /><path d="M313 748 C304 739 304 725 313 716 L324 705 C333 696 347 696 356 705 C365 714 365 728 356 737 L345 748 C336 757 322 757 313 748 Z M322 707 L353 738" /></g>
+          </g>
+          <g class="health-clinical-panel health-clinical-panel-top">
+            <rect x="1206" y="252" width="240" height="198" rx="20" /><rect x="1230" y="277" width="74" height="66" rx="9" />
+            <path class="health-plus-mark" d="M1267 291 L1267 329 M1248 310 L1286 310" /><rect x="1320" y="277" width="101" height="20" rx="5" /><rect x="1320" y="311" width="74" height="12" rx="5" />
+            <rect x="1230" y="360" width="91" height="15" rx="5" /><rect x="1230" y="389" width="137" height="12" rx="5" /><path class="health-shield" d="M1392 356 L1423 370 L1423 405 C1423 426 1409 440 1392 447 C1375 440 1361 426 1361 405 L1361 370 Z M1378 400 L1388 410 L1408 387" />
+          </g>
+          <g class="health-clinical-panel health-clinical-panel-bottom">
+            <rect x="1152" y="494" width="150" height="190" rx="18" /><path class="health-chart" d="M1175 626 L1175 542 L1280 542 M1186 606 L1201 583 L1217 594 L1237 560 L1253 576 L1273 550" /><rect x="1175" y="641" width="83" height="10" rx="5" /><rect x="1175" y="661" width="58" height="10" rx="5" />
+            <rect x="1324" y="494" width="130" height="151" rx="18" /><path class="health-lungs" d="M1389 520 C1363 525 1348 552 1349 590 L1349 612 C1370 612 1385 599 1389 578 M1389 520 C1415 525 1430 552 1429 590 L1429 612 C1408 612 1393 599 1389 578 M1389 520 L1389 607" />
+          </g>
+          <g class="health-network health-network-right">
+            <path d="M1458 227 L1537 214 L1600 267 M1445 338 L1515 371 L1600 342 M1450 495 L1526 460 L1600 513 M1466 625 L1533 670 L1600 633 M1515 371 L1526 460 L1533 670" />
+            <g class="health-nodes"><circle cx="1537" cy="214" r="6" /><circle cx="1515" cy="371" r="7" /><circle cx="1526" cy="460" r="5" /><circle cx="1533" cy="670" r="7" /><circle cx="1450" cy="495" r="6" /><circle cx="1466" cy="625" r="5" /></g>
+          </g>
+          <g class="health-projection" filter="url(#softGlow)"><ellipse cx="1354" cy="755" rx="198" ry="48" /><ellipse cx="1354" cy="755" rx="152" ry="35" /><ellipse cx="1354" cy="755" rx="106" ry="23" /><ellipse cx="1354" cy="755" rx="52" ry="11" /><path class="health-scan-line" d="M1354 716 L1354 544" /></g>
+          <g class="health-data-streams"><path d="M0 760 C220 670 344 835 542 745 S842 830 1038 735 S1330 824 1600 728" /><path d="M0 798 C210 712 355 862 547 780 S851 855 1044 770 S1354 856 1600 778" /><path d="M0 838 C188 755 368 878 570 816 S878 890 1080 807 S1372 887 1600 824" /></g>
+        </svg>
+        <svg class="health-wave-overlay" viewBox="0 0 1600 260" preserveAspectRatio="none" role="presentation">
+          <path class="health-wave-line health-wave-line-one" d="M-80 172 C130 85 282 228 480 150 S788 224 987 132 S1298 210 1680 88" />
+          <path class="health-wave-line health-wave-line-two" d="M-60 204 C154 120 294 245 502 181 S803 247 1028 160 S1324 239 1660 138" />
+          <path class="health-wave-line health-wave-line-three" d="M-40 236 C176 156 335 264 540 211 S848 270 1067 197 S1372 258 1640 180" />
+        </svg>
+      </div>
+      <div class="container" style="position:relative;z-index:1;">
+        <h1 class="display-text-palatino">
+          <span class="hero-title-top">ICLR 2027 Workshop on</span>
+          <span class="hero-title-main">Human-Centered AI for Health</span>
+          <span class="hero-title-subtitle">Multimodal Learning and Self-Evolving Agents</span>
+        </h1>
+        <div class="hero-workshop-text">Human-Centered AI for Health @ ICLR 2027<br>April 29, 2027 · San Francisco, California, USA</div>
+        <a href="#call-for-papers" class="hero-social-link scrollto" aria-label="Read the Call for Papers">
+          <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+          <span>Read the Call for Papers</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="fade-in">
+      <div class="container">
+        <div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Invited Speakers</span><span class="section-header-subtitle">Human-Centered AI for Health @ ICLR 2027</span></div></div>
+        <div class="organizers-grid genai-people-grid">
+          <a href="https://suchisaria.jhu.edu/" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/suchi-saria.jpg" alt="Suchi Saria" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Suchi Saria</div><div class="organizer-org">Bayesian Health &amp; Johns Hopkins University</div></div></a>
+          <a href="https://profiles.stanford.edu/nigam-shah" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/nigam-shah.jpg" alt="Nigam Shah" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Nigam Shah</div><div class="organizer-org">Stanford University</div></div></a>
+          <a href="https://scholar.google.com/citations?user=yqqmVbkAAAAJ" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/hoifung-poon.jpg" alt="Hoifung Poon" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Hoifung Poon</div><div class="organizer-org">Recursion</div></div></a>
+          <a href="https://stanford.edu/~eadeli/" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/ehsan-adeli.jpg" alt="Ehsan Adeli" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Ehsan Adeli</div><div class="organizer-org">Stanford University</div></div></a>
+          <a href="https://irenechen.net/" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/irene-chen.jpg" alt="Irene Y. Chen" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Irene Y. Chen</div><div class="organizer-org">UC Berkeley</div></div></a>
+          <a href="https://pliang279.github.io/" target="_blank" rel="noopener noreferrer" class="organizer-card genai-speaker-card"><img src="public/data/images/speakers/paul-liang.jpg" alt="Paul Liang" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Paul Liang</div><div class="organizer-org">MIT</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="schedule" class="schedule fade-in">
+      <div class="container">
+        <div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Agenda (Tentative)</span><span class="section-header-subtitle">Human-Centered AI for Health @ ICLR 2027</span></div></div>
+        <p class="genai-section-copy">Tentative one-day schedule for April 29, 2027. Session details and speaker assignments will be announced.</p>
+        <div class="schedule-timeline genai-agenda-timeline">
+          <div class="genai-agenda-heading">Morning Session</div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">8:50-9:00</div><div class="schedule-entry-session">Opening Remarks</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">9:00-10:00</div><div class="schedule-entry-session">Keynote Session I: Two invited talks (including Q&amp;A)</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">10:00-10:30</div><div class="schedule-entry-session">Contributed Talks I: Spotlight presentations</div></div>
+          </div>
+          <div class="schedule-timeline-row genai-agenda-break">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">10:30-11:00</div><div class="schedule-entry-session">Morning Coffee Break</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">11:00-11:30</div><div class="schedule-entry-session">Keynote Session II: Invited talk (including Q&amp;A)</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">11:30-12:15</div><div class="schedule-entry-session">Panel Discussion I: Multimodal evidence and agentic reasoning in clinical workflows</div></div>
+          </div>
+          <div class="schedule-timeline-row genai-agenda-break">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">12:15-1:30</div><div class="schedule-entry-session">Lunch Break</div></div>
+          </div>
+          <div class="genai-agenda-heading">Afternoon Session</div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">1:30-2:30</div><div class="schedule-entry-session">Keynote Session III: Two invited talks (including Q&amp;A)</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">2:30-3:00</div><div class="schedule-entry-session">Contributed Talks II: Spotlight presentations</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">3:00-4:15</div><div class="schedule-entry-session">Poster and Demonstration Session (with afternoon coffee)</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">4:15-5:00</div><div class="schedule-entry-session">Panel Discussion II: Human oversight, learning from feedback, and safe model updates</div></div>
+          </div>
+          <div class="schedule-timeline-row">
+            <div class="schedule-duration"></div><div class="schedule-rail"><span></span></div>
+            <div class="schedule-entry"><div class="schedule-entry-time">5:00-5:15</div><div class="schedule-entry-session">Awards and Closing Remarks</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call for Papers Section -->
+    <section id="call-for-papers" class="fade-in">
+      <div class="container genai-section-copy">
+        <div class="section-header-component"><div class="section-header-row"><span class="section-header-title">Call for Papers</span><span class="section-header-subtitle">Human-Centered AI for Health @ ICLR 2027</span></div></div>
+        <h3 class="genai-cfp-about">About</h3>
+        <p>Healthcare generates a growing body of electronic health records, images, physiological measurements, and patient-reported information that could support more timely and individualized care. Medical vision models, large language models, and tool-using agents can help interpret these data across prevention, diagnosis, treatment, and monitoring. Yet strong model performance alone does not establish effective human-AI collaboration: models must learn from incomplete data, remain reliable across populations and care settings, communicate uncertainty, and offer routes for correction. For systems that learn from feedback, these questions recur after every update.</p>
+        <p>Human-centered AI starts from the goals, capabilities, and constraints of clinicians, patients, and caregivers, and involves them in defining tasks, designing interactions, and evaluating results. This workshop brings together the machine learning, healthcare, and human-computer interaction communities to ask how healthcare AI can become more capable while remaining useful and accountable to its users, through research on multimodal learning, agentic reasoning, and systems that improve through experience.</p>
+        <p>The workshop aims to:</p>
+        <ul class="genai-list">
+          <li><strong>Connect multimodal learning to clinical decisions.</strong> Identify when additional modalities improve a decision, how systems should handle incomplete or conflicting evidence, and when acquiring more information is worth the burden on a patient or caregiver.</li>
+          <li><strong>Support reliable decisions across patients and care settings.</strong> Clarify when clinicians and patients can rely on AI, when human review is needed, and what evidence shows that using a system improves care.</li>
+          <li><strong>Make learning from feedback and experience testable.</strong> Use independent evidence to test whether healthcare agents improve through clinician feedback, interaction, and delayed outcomes, and define criteria for detecting harm and reverting updates.</li>
+          <li><strong>Define meaningful human oversight and collaboration.</strong> Study uncertainty communication, evidence inspection, correction, and deferral, and evaluate effects on workload, autonomy, trust, and outcomes.</li>
+          <li><strong>Build shared evaluation practices and collaborations.</strong> Bring together causal inference, probabilistic modeling, machine learning, AI safety, clinical research, and human-centered AI to develop shared evaluation practices.</li>
+        </ul>
+        <p>San Francisco, California, USA. April 29, 2027.</p>
+        <h3>Topics of Interest</h3>
+        <p>We welcome methodological, empirical, and conceptual contributions addressing AI for healthcare and medicine. Work on individual modalities, conventional predictive models, datasets, negative results, or human factors is welcome when it advances the broader questions above.</p>
+        <div class="bento-section"><div class="bento-list">
+          <article class="bento-topic"><span class="bento-num">1</span><div class="bento-topic-content"><h4 class="bento-title">Multimodal and Multisensory Representations for Patient Understanding</h4><p class="bento-desc">Methods that learn personalized patient representations from health records, clinical text, imaging, physiological time series, wearables, speech, video, and other patient- or environment-derived sensory signals, including how to align and combine incomplete, irregular, or conflicting evidence across time and modalities.</p><details class="genai-topic-details"><summary>Topics include, but are not limited to:</summary><ul><li>Multimodal fusion across EHR, text, imaging, time series, and wearables</li><li>Aligning incomplete, irregular, or conflicting evidence over time</li><li>Speech, video, and ambient sensing for patient understanding</li><li>Modeling how care and measurement processes shape available data</li><li>Personalized patient representations and longitudinal modeling</li></ul></details></div></article>
+          <article class="bento-topic"><span class="bento-num">2</span><div class="bento-topic-content"><h4 class="bento-title">Agentic Reasoning and Clinical Workflows</h4><p class="bento-desc">Healthcare agents that retrieve evidence, reason over incomplete patient histories, plan actions, use tools, and coordinate with other agents. A central question is how these systems should decide what information to acquire, when to act, and when to defer to or seek human input within clinical, patient-facing, or administrative workflows.</p><details class="genai-topic-details"><summary>Topics include, but are not limited to:</summary><ul><li>Tool-using and multi-agent systems for diagnosis, triage, and care coordination</li><li>Evidence retrieval and reasoning over incomplete patient histories</li><li>Deciding what information to acquire and when to act or defer</li><li>Agents in clinical documentation, administrative, and patient-facing workflows</li><li>Simulated environments and benchmarks for interactive clinical agents</li></ul></details></div></article>
+          <article class="bento-topic"><span class="bento-num">3</span><div class="bento-topic-content"><h4 class="bento-title">AI Safety, Evaluation, and Deployment</h4><p class="bento-desc">Causal and probabilistic methods, independent prospective studies, and stress tests to assess clinical benefit, harm, and reliability under distribution shift and across patient populations, along with datasets, benchmarks, negative results, and failure analyses that inform monitoring, safe updates, or rollback.</p><details class="genai-topic-details"><summary>Topics include, but are not limited to:</summary><ul><li>Causal and probabilistic evaluation of clinical benefit and harm</li><li>Reliability under distribution shift and across patient subgroups</li><li>Prospective studies, stress tests, and red teaming</li><li>Datasets, benchmarks, negative results, and failure analyses</li><li>Monitoring, safe model updates, and rollback</li></ul></details></div></article>
+          <article class="bento-topic"><span class="bento-num">4</span><div class="bento-topic-content"><h4 class="bento-title">Learning from Experience and Self-Evolution</h4><p class="bento-desc">How healthcare agents adapt their memory, prompts, tools, policies, or parameters using human feedback, delayed outcomes, and changing patient needs, including continual, active, and reinforcement learning approaches that use experience, synthetic data, or simulation while preserving prior capabilities and respecting safety constraints.</p><details class="genai-topic-details"><summary>Topics include, but are not limited to:</summary><ul><li>Continual, active, and reinforcement learning from clinical feedback</li><li>Learning from delayed outcomes and changing patient needs</li><li>Adapting memory, prompts, tools, policies, or parameters safely</li><li>Synthetic data and simulation for experience-driven learning</li><li>Preserving prior capabilities while limiting data and compute requirements</li></ul></details></div></article>
+          <article class="bento-topic"><span class="bento-num">5</span><div class="bento-topic-content"><h4 class="bento-title">Human-AI Collaboration and Inclusive Care</h4><p class="bento-desc">Participatory research with clinicians, patients, and caregivers on systems that explain their outputs, communicate uncertainty, and allow people to inspect evidence, correct errors, or override decisions, including appropriate reliance, shared decision-making, and accessible, multilingual interfaces that respect patient preferences.</p><details class="genai-topic-details"><summary>Topics include, but are not limited to:</summary><ul><li>Uncertainty communication, evidence inspection, correction, and override</li><li>Appropriate reliance, automation bias, and shared decision-making</li><li>Participatory design with clinicians, patients, and caregivers</li><li>Accessible and multilingual interfaces for wearable, ambient, conversational, embodied, or home-based systems</li><li>Workload, autonomy, trust, equity, and patient preferences as evaluation goals</li></ul></details></div></article>
+        </div></div>
+        <h3 class="genai-cfp-important-dates">Important Dates (Tentative)</h3>
+        <table class="important-dates">
+          <tr class="important-date-row"><td>Paper Submission Deadline</td><td><strong>February 1, 2027</strong></td></tr>
+          <tr class="important-date-row"><td>Acceptance Notification</td><td><strong>February 26, 2027</strong></td></tr>
+          <tr class="important-date-row"><td>Camera-ready Submission</td><td><strong>To be announced</strong></td></tr>
+          <tr class="important-date-row"><td>Workshop Day</td><td><strong>April 29, 2027</strong></td></tr>
+        </table>
+        <p class="genai-cfp-deadline-note"><strong>All deadlines are at 11:59 PM AoE (Anywhere on Earth).</strong></p>
+        <h3>Submission Tracks</h3>
+        <p>Research, demonstration, and position papers may address any of the five topic areas. We encourage multidisciplinary submissions involving stakeholders from healthcare, public policy, and adjacent fields.</p>
+        <div class="genai-track-grid">
+          <article class="genai-track-panel">
+            <header><h4>Research Papers</h4><span class="genai-track-page-limit">Up to 9 pages</span></header>
+            <div class="genai-track-panel-content"><p class="genai-track-summary">The core of the program: methodological advances and empirical studies in human-centered AI for health.</p><div><h5>What we expect.</h5><p>Research papers should be complete, self-contained works: a clearly stated problem, a described method, and empirical evidence supporting the claims. Experiments should include appropriate baselines and evaluation protocols (e.g., held-out test data, ablations where relevant). Work in progress is acceptable only if the current results already substantiate the central claim - promising directions without supporting evidence are better suited as short position papers.</p></div><div><h5>What reviewers will assess.</h5><p>(1) Technical soundness and rigor of the evaluation; (2) novelty of the method, benchmark, dataset, or findings; (3) relevance and potential impact for health; (4) clarity of presentation. A Research Paper does not need to be at the level of a full ICLR main-conference paper in scope, but its claims must be well supported by the evidence presented.</p></div></div>
+          </article>
+          <article class="genai-track-panel">
+            <header><h4>Demonstration Papers</h4><span class="genai-track-page-limit">Up to 5 pages</span></header>
+            <div class="genai-track-panel-content"><p class="genai-track-summary">Working systems, applications, and tools relevant to human-centered AI in health.</p><div><h5>What we expect.</h5><p>Demonstration papers should describe a functioning system - deployed, in pilot, or in a working prototype state - including its architecture, intended users, and use context. A comprehensive quantitative evaluation is not required; however, submissions should include evidence that the system works as described (e.g., screenshots, example interactions, a video link, usage statistics, or preliminary user feedback). Mockups or purely conceptual designs are not a fit for this track.</p></div><div><h5>What reviewers will assess.</h5><p>(1) Whether the system is real and functional; (2) relevance and usefulness to health stakeholders; (3) technical interest of the system design; (4) clarity of the demonstration plan.</p></div></div>
+          </article>
+          <article class="genai-track-panel">
+            <header><h4>Position Papers</h4><span class="genai-track-page-limit">Up to 5 pages</span></header>
+            <div class="genai-track-panel-content"><p class="genai-track-summary">Perspectives, analyses, and proposals on policy, governance, evaluation practices, or deployment strategies for human-centered AI in health.</p><div><h5>What we expect.</h5><p>Position papers should advance a clear, well-argued thesis. New experiments are not required, but arguments must be grounded in evidence - literature, regulatory precedent, clinical experience, or documented deployments. A strong position paper engages seriously with counterarguments rather than only advocating one side.</p></div><div><h5>What reviewers will assess.</h5><p>(1) Clarity and significance of the position; (2) quality and grounding of the argument; (3) potential to provoke productive discussion in the community; (4) multidisciplinary relevance.</p></div></div>
+          </article>
+        </div>
+        <h3>Submission Format Requirements</h3>
+        <ul class="genai-list">
+          <li>Use the <a href="https://iclr.cc/Conferences/2027" target="_blank" rel="noopener noreferrer">ICLR 2027 LaTeX style</a>: <code>\usepackage{iclr2027_conference}</code> without <code>\iclrfinalcopy</code>, so the submission is anonymous.</li>
+          <li>Page limits exclude references and appendices. Supplementary material (code, data, videos) may be included as appendices.</li>
+          <li>Submissions must be original and unpublished. Preprints (e.g., arXiv) are fine; work already published at an archival venue is not eligible.</li>
+          <li>Submissions that do not meet these requirements may be desk rejected.</li>
+        </ul>
+        <h3>Review Process</h3>
+        <ul class="genai-list">
+          <li><strong>Platform:</strong> OpenReview (link to be posted here). Register early; new account approval can take several days.</li>
+          <li><strong>Double-blind:</strong> No author names, affiliations, identifying acknowledgments, or non-anonymized links. Violations may lead to desk rejection.</li>
+          <li><strong>Reviews:</strong> At least two program committee reviews per submission, matched by topic and track. There is no rebuttal stage, so make the paper self-contained and include a limitations section.</li>
+          <li><strong>Conflicts:</strong> Submissions involving an organizer or an organizer's institution are handled by a non-conflicted committee member.</li>
+          <li><strong>Confidentiality:</strong> Submissions are visible only to assigned reviewers and organizers. Rejected submissions are never made public.</li>
+        </ul>
+        <h3 id="faq">Publication Policy &amp; FAQ</h3>
+        <p>This workshop is <strong>non-archival</strong>: there are no proceedings, and acceptance is not a formal publication. Accepted papers are posted publicly on OpenReview by default; authors may opt out before the camera-ready deadline.</p>
+        <div class="site-faq">
+          <details><summary>What does &ldquo;non-archival&rdquo; mean?</summary><p>Accepted papers are not published in proceedings and do not count as a prior publication. You keep full copyright.</p></details>
+          <details><summary>Can I submit my workshop paper to a journal or conference afterwards?</summary><p>Yes. Check the target venue's policy first; some venues restrict prior presentation even at non-archival workshops.</p></details>
+          <details><summary>Can I submit work that is under review elsewhere at the same time?</summary><p>Yes, concurrent submission is allowed, provided the other venue's dual-submission and anonymity rules permit it. Checking this is the authors' responsibility.</p></details>
+          <details><summary>Can I submit a paper that was withdrawn from a conference main track?</summary><p>Yes.</p></details>
+          <details><summary>Can I submit work that has already been published or accepted elsewhere?</summary><p>Work already published in an archival venue is not eligible. Work accepted but not yet published may be submitted only if the other venue permits it. Non-archival preprints such as arXiv are fine.</p></details>
+          <details><summary>Will my accepted paper be public?</summary><p>By default, yes: accepted papers are posted on OpenReview after the camera-ready stage. Authors may opt out by contacting the organizers before the camera-ready deadline, in which case the PDF is not posted. A reminder is sent before that deadline.</p></details>
+          <details><summary>Does the page limit include references and appendices?</summary><p>No. Research papers get up to 9 pages and demonstration and position papers up to 5 pages of main text; acknowledgments, references, and appendices are excluded. Reviewers are not required to read appendices.</p></details>
+          <details><summary>Do I need the ICLR checklist or reproducibility statement?</summary><p>No. Neither is required for workshop submissions.</p></details>
+          <details><summary>Do I have to present in person?</summary><p>At least one author of each accepted paper is expected to present in person at the workshop in San Francisco.</p></details>
+          <details><summary>Can I use AI tools when writing my paper?</summary><p>AI tools may assist with writing and editing, but authors remain fully responsible for the content. Papers generated primarily by AI systems are not permitted, consistent with ICLR 2027 policy.</p></details>
+        </div>
+        <h3>Authorship Policy</h3>
+        <ul class="genai-list">
+          <li><strong>No authors may be added after the submission deadline,</strong> at any stage.</li>
+          <li><strong>Reordering authors</strong> on accepted papers is permitted with the consent of all authors.</li>
+          <li><strong>Removing an author</strong> requires written consent from every author, including the one removed, sent to the program chairs with a justification.</li>
+        </ul>
+        <h3>Presentation &amp; Awards</h3>
+        <ul class="genai-list">
+          <li>All accepted papers are presented as posters.</li>
+          <li>Spotlight talks are selected from the accepted papers.</li>
+          <li>Three Outstanding Paper Awards are selected, one for each paper track, and announced at the closing session.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Organizers Section -->
+    <section id="organizers" class="fade-in">
+      <div class="container">
+        <div class="section-header-component genai-people-section-header"><div class="section-header-row"><span class="section-header-title">Organizers</span></div></div>
+        <div class="organizers-grid genai-people-grid">
+          <a href="https://aaronhan223.github.io/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/xing-han.jpg" alt="Xing Han" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Xing Han</div><div class="organizer-org">Johns Hopkins University</div></div></a>
+          <a href="https://gauthamkrishna-g.github.io/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/gautham-krishna-gudur.jpg" alt="Gautham Krishna Gudur" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Gautham Krishna Gudur</div><div class="organizer-org">UT Austin</div></div></a>
+          <a href="https://dd.works/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/wei-dai.jpg" alt="Wei Dai" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Wei Dai</div><div class="organizer-org">MIT</div></div></a>
+          <a href="https://cyber.harvard.edu/people/jiaee-cheong" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/jiaee-cheong.jpg" alt="Jiaee Cheong" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Jiaee Cheong</div><div class="organizer-org">Harvard University</div></div></a>
+          <a href="https://yoavwald.owlstown.net/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/yoav-wald.jpg" alt="Yoav Wald" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Yoav Wald</div><div class="organizer-org">Technion</div></div></a>
+          <a href="https://asubbaswamy.github.io/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/adarsh-subbaswamy.jpg" alt="Adarsh Subbaswamy" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Adarsh Subbaswamy</div><div class="organizer-org">University of Maryland</div></div></a>
+          <a href="https://dispathis.com/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/organizers/dimitris-spathis.jpg" alt="Dimitris Spathis" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Dimitris Spathis</div><div class="organizer-org">Google</div></div></a>
+        </div>
+      </div>
+    </section>
+    <section id="advisory-committee" class="fade-in genai-people-section">
+      <div class="container">
+        <h3 class="genai-subsection-title genai-people-section-heading">Advisory Committee</h3>
+        <div class="organizers-grid genai-people-grid">
+          <a href="https://ideal.ece.utexas.edu/ghosh/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/advisory/joydeep-ghosh.jpg" alt="Joydeep Ghosh" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Joydeep Ghosh</div><div class="organizer-org">UT Austin</div></div></a>
+          <a href="https://xliucs.github.io/" target="_blank" rel="noopener noreferrer" class="organizer-card"><img src="public/data/images/advisory/xin-liu.jpg" alt="Xin Liu" class="organizer-photo"><span class="genai-profile-overlay" aria-hidden="true"><i class="bi bi-arrow-right"></i></span><div class="organizer-info"><div class="organizer-name">Xin Liu</div><div class="organizer-org">Google Health Research</div></div></a>
+        </div>
+      </div>
+    </section>
+    <!-- Program Committee is pending confirmation. -->
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="genai-footer-columns"><div class="genai-footer-neurips-logo site-footer-logo"><a href="https://iclr.cc/Conferences/2027" target="_blank" rel="noopener noreferrer" aria-label="ICLR 2027"><img src="images/iclr.svg" alt="ICLR 2027"></a></div><div><strong>Submission</strong><a class="scrollto" href="#call-for-papers">Research Paper Track</a>
+<a class="scrollto" href="#call-for-papers">Demonstration Paper Track</a>
+<a class="scrollto" href="#call-for-papers">Position Paper Track</a>
+<span>OpenReview portal: to be announced</span></div><div><strong>Conference</strong><a href="https://iclr.cc/Conferences/2027" target="_blank" rel="noopener noreferrer">ICLR 2027</a>
+<a href="https://iclr.cc/Conferences/2027/CallForWorkshops" target="_blank" rel="noopener noreferrer">ICLR 2027 Call for Workshops</a></div><div><strong>Important Dates</strong><span>Submissions: February 1, 2027, 11:59 PM AoE</span><span>Notifications: February 26, 2027</span><span>Workshop: April 29, 2027</span></div><div><strong>Contact Us</strong><span>Contact details will be posted soon.</span></div></div>
+      <p class="footer-text">Copyright &copy; 2027 Human-Centered AI for Health Workshop @ ICLR 2027. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="styles/js/main.js"></script>
+</body>
+
+</html>
