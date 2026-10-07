@@ -130,3 +130,10 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 .site-faq details p {
   margin: 0 0 1rem 1.7rem;
 }
+
+/* Organizers: flex instead of grid so a trailing partial row centers (7 people -> 3/3/1 with the last one centered). */
+#organizers .genai-people-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
