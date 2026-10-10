@@ -483,3 +483,115 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
     padding: var(--space-3) var(--space-4);
   }
 }
+
+/* Call for Papers: calmer text setting. Ragged-right, comfortable measure, cards instead of stacked bullets. */
+#call-for-papers .genai-section-copy > p,
+#call-for-papers .genai-section-copy > ul.genai-list {
+  max-width: 76ch;
+  text-align: left;
+}
+
+#call-for-papers .genai-cfp-about + p {
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.site-aims {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0 var(--space-6);
+}
+
+.site-aim {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-aim-num {
+  flex: 0 0 auto;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.site-aim strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--text);
+  font-size: var(--font-size-sm);
+}
+
+.genai-section-copy .site-aim p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+  text-align: left;
+}
+
+.site-criteria {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.site-criterion {
+  padding-top: var(--space-3);
+  border-top: 2px solid var(--accent-soft);
+}
+
+.site-criterion strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+}
+
+.genai-section-copy .site-criterion p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.genai-section-copy .site-note {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: var(--space-4) 0 var(--space-6);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.site-note i {
+  flex: 0 0 auto;
+  margin-top: 0.15rem;
+  color: var(--accent);
+}
+
+@media (max-width: 767px) {
+  .site-aims,
+  .site-criteria {
+    grid-template-columns: 1fr;
+  }
+}
+
+#call-for-papers .genai-section-copy > p.site-wide {
+  max-width: none;
+}
