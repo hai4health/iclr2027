@@ -1017,3 +1017,8 @@ html[data-theme="dark"] #call-for-papers .genai-section-copy > p.site-policy {
     aspect-ratio: 5 / 6;
   }
 }
+
+/* Organizers: use the same container width as every other section. */
+#organizers .container {
+  max-width: var(--container-max-width);
+}
