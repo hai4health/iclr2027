@@ -858,7 +858,6 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   margin-bottom: 0;
 }
 
-
 /* Topics intro: one short lead line, the qualifiers in smaller muted text. */
 #call-for-papers .genai-section-copy > p.site-topics-lead {
   margin-bottom: var(--space-2);
@@ -869,36 +868,6 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   color: var(--text-muted);
   font-size: var(--font-size-sm);
   line-height: 1.55;
-}
-
-/* Publication policy facts row. */
-.site-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem var(--space-5);
-  margin: var(--space-3) 0 var(--space-4);
-  padding: 0;
-  list-style: none;
-}
-
-.site-facts li {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  color: var(--text-muted);
-  font-size: var(--font-size-sm);
-  line-height: 1.5;
-}
-
-.site-facts li i {
-  color: var(--accent);
-  font-size: 1em;
-  transform: translateY(0.08em);
-}
-
-.site-facts li strong {
-  color: var(--text);
-  font-weight: var(--font-weight-semibold);
 }
 
 /* FAQ accordion polish: chevron, hover tint, accent rule on the answer. */
@@ -945,23 +914,24 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   font-size: var(--font-size-sm);
 }
 
-@media (max-width: 767px) {
-  .site-facts {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
+
+/* Publication policy: a quiet callout with an accent rule. */
+#call-for-papers .genai-section-copy > p.site-policy {
+  max-width: none;
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  background: var(--surface-muted);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
 }
 
-/* Facts row: three equal columns on desktop. */
-@media (min-width: 768px) {
-  .site-facts {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-4);
-    align-items: start;
-  }
+#call-for-papers .site-policy strong {
+  color: var(--text);
+}
 
-  .site-facts li {
-    display: flex;
-  }
+html[data-theme="dark"] #call-for-papers .genai-section-copy > p.site-policy {
+  background: rgba(255, 255, 255, 0.04);
 }
