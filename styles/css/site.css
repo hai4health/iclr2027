@@ -1022,3 +1022,123 @@ html[data-theme="dark"] #call-for-papers .genai-section-copy > p.site-policy {
 #organizers .container {
   max-width: var(--container-max-width);
 }
+
+/* Hero: rebalanced type scale, eyebrow date line, primary + ghost buttons, scroll cue. */
+#home .display-text-palatino .hero-title-top {
+  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  opacity: 0.92;
+}
+
+#home .display-text-palatino .hero-title-main {
+  font-size: clamp(2.6rem, 6vw, 4.75rem);
+}
+
+#home .display-text-palatino .hero-title-subtitle {
+  font-size: clamp(1.05rem, 1.75vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.35;
+  opacity: 0.94;
+}
+
+#home .site-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: clamp(1.2rem, 2.6vh, 1.9rem);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(0.78rem, 1vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+#home .site-hero-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.site-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: clamp(1.4rem, 3vh, 2.2rem);
+}
+
+#home .site-hero-actions .hero-social-link {
+  margin-top: 0;
+}
+
+#home .site-hero-actions .site-hero-primary {
+  border-color: #f0fbfc;
+  background: #f0fbfc;
+  color: #06202a;
+}
+
+#home .site-hero-actions .site-hero-primary:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #06202a;
+}
+
+.site-hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.1rem, 3vh, 2rem);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  transform: translateX(-50%);
+  color: #f0fbfc;
+  opacity: 0.55;
+  text-decoration: none;
+  animation: site-hero-bob 2.4s ease-in-out infinite;
+  transition: opacity var(--transition-fast);
+}
+
+.site-hero-scroll:hover {
+  color: #ffffff;
+  opacity: 0.95;
+  text-decoration: none;
+}
+
+.site-hero-scroll i {
+  font-size: 1.25rem;
+}
+
+@keyframes site-hero-bob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-hero-scroll {
+    animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #home .site-hero-eyebrow {
+    flex-direction: column;
+    gap: 0.35rem;
+    letter-spacing: 0.1em;
+  }
+
+  #home .site-hero-sep {
+    display: none;
+  }
+
+  .site-hero-scroll {
+    display: none;
+  }
+}
