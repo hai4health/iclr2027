@@ -156,3 +156,27 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 .site-panels h3 {
   margin-bottom: var(--space-3);
 }
+
+/* Avoid dangling single words on wrapped lines (progressive enhancement; ignored by older browsers). */
+.hero-title-top,
+.hero-title-main,
+.hero-title-subtitle,
+.hero-workshop-text,
+.section-header-title,
+.genai-subsection-title,
+.genai-agenda-heading,
+.bento-title,
+.organizer-org,
+.organizer-name {
+  text-wrap: balance;
+}
+
+.genai-section-copy p,
+.genai-section-copy li,
+.bento-desc,
+.schedule-entry-session,
+.genai-track-panel p,
+.site-faq p,
+.footer-text {
+  text-wrap: pretty;
+}
