@@ -31,10 +31,6 @@
   opacity: 0.9;
 }
 
-/* Two advisory members: keep the grid centered and tidy. */
-#advisory-committee .genai-people-grid {
-  grid-template-columns: repeat(auto-fit, 200px);
-}
 
 /* Phones: let the long title wrap to two lines and stop short of the theme switcher. */
 @media (max-width: 767px) {
@@ -934,4 +930,90 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
 
 html[data-theme="dark"] #call-for-papers .genai-section-copy > p.site-policy {
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* Organizers: four per row, speaker-style cards, advisory committee tucked beneath. */
+#organizers .genai-people-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: var(--space-4);
+  max-width: none;
+  justify-content: center;
+}
+
+#organizers .genai-people-grid .organizer-card {
+  border: 0;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+#organizers .genai-people-grid .organizer-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+#organizers .genai-people-grid .organizer-photo {
+  filter: saturate(0.82);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: filter var(--transition-normal), transform var(--transition-normal);
+}
+
+#organizers .genai-people-grid .organizer-card:hover .organizer-photo {
+  filter: saturate(1);
+}
+
+#organizers .genai-people-grid .organizer-info {
+  min-height: 4.9rem;
+  padding: var(--space-3) var(--space-2);
+}
+
+#organizers .organizer-name {
+  font-size: var(--font-size-sm);
+  line-height: 1.25;
+}
+
+#organizers .organizer-org {
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+}
+
+.site-advisory {
+  margin-top: var(--space-6);
+}
+
+.site-advisory-title {
+  margin: 0 0 var(--space-4);
+  color: var(--text-subtle);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#organizers .site-advisory-grid {
+  grid-template-columns: repeat(2, 200px);
+}
+
+@media (max-width: 991px) {
+  #organizers .genai-people-grid {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+}
+
+@media (max-width: 480px) {
+  #organizers .genai-people-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #organizers .genai-people-grid .organizer-card,
+  #organizers .genai-people-grid .organizer-photo {
+    width: 100%;
+  }
+
+  #organizers .genai-people-grid .organizer-photo,
+  #organizers .genai-profile-overlay {
+    height: auto;
+    aspect-ratio: 5 / 6;
+  }
 }
