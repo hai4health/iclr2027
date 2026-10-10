@@ -1,4 +1,4 @@
-# Human-Centered AI for Health @ ICLR 2027
+# HAI4Health: Human-Centered AI for Health @ ICLR 2027
 
 Website for the ICLR 2027 workshop **Human-Centered AI for Health**.
 Live site: https://hai4health.github.io/iclr2027/
