@@ -1645,3 +1645,149 @@ section:not(.hero) {
     transition: none;
   }
 }
+
+/* Navbar lockup: themed logo (no filter), neutral title with a hairline divider, slightly smaller mark. */
+.navbar-logo img,
+html[data-theme="dark"] .navbar-logo img {
+  filter: none !important;
+}
+
+.site-navbar-logo {
+  height: 46px;
+}
+
+.site-logo-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .site-logo-light {
+  display: none;
+}
+
+html[data-theme="dark"] .site-logo-dark {
+  display: block;
+}
+
+.navbar-title.site-navbar-title {
+  gap: 0;
+  color: var(--text) !important;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+.navbar-title.site-navbar-title::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1.5rem;
+  margin-right: 1rem;
+  background: var(--border);
+}
+
+.navbar-title.site-navbar-title:hover {
+  color: var(--text) !important;
+  opacity: 0.8;
+}
+
+.navbar-title-group {
+  gap: 0.75rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .site-navbar-logo {
+    height: 38px;
+  }
+
+  .navbar-title.site-navbar-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-navbar-logo {
+    height: 30px;
+  }
+
+  .navbar-title.site-navbar-title {
+    font-size: 0.92rem;
+  }
+
+  .navbar-title.site-navbar-title::before {
+    height: 1.9rem;
+    margin-right: 0.7rem;
+  }
+}
+
+/* Phone lockup: two clean lines for the title. */
+@media (max-width: 767px) {
+  .site-navbar-logo {
+    height: 28px;
+  }
+
+  .navbar-title.site-navbar-title {
+    font-size: 0.88rem;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+}
+
+/* Accent: a muted teal in place of the template's brown, so the whole page shares the hero's palette. */
+:root {
+  --accent: #0f6e74;
+  --accent-hover: #0b565b;
+  --accent-soft: rgba(15, 110, 116, 0.13);
+  --accent-contrast: #ffffff;
+  --button: #0f6e74;
+  --button-hover: #0b565b;
+  --focus-ring: rgba(15, 110, 116, 0.25);
+  --color-primary: #0f6e74;
+  --color-primary-light: #3f9aa0;
+  --color-primary-dark: #0b565b;
+  --color-secondary: #2f7f85;
+  --color-secondary-light: #5fb0b5;
+  --color-secondary-dark: #0b565b;
+  --color-accent: #0f6e74;
+  --color-accent-light: #3f9aa0;
+  --color-accent-dark: #0b565b;
+}
+
+html[data-theme="dark"] {
+  --accent: #7fd6dc;
+  --accent-hover: #a6e6ea;
+  --accent-soft: rgba(127, 214, 220, 0.16);
+  --accent-contrast: #06202a;
+  --button: #7fd6dc;
+  --button-hover: #a6e6ea;
+  --focus-ring: rgba(127, 214, 220, 0.3);
+  --color-primary: #8fdce1;
+  --color-primary-light: #b9ecef;
+  --color-primary-dark: #5fc3c9;
+  --color-secondary: #7fd6dc;
+  --color-secondary-light: #b9ecef;
+  --color-secondary-dark: #5fc3c9;
+  --color-accent: #7fd6dc;
+  --color-accent-light: #b9ecef;
+  --color-accent-dark: #5fc3c9;
+}
+
+/* The template's leftover lime: title underline bar and list bullets. */
+.section-header-component::after,
+.section-header-row::after,
+.section-header-component .section-header-row::after {
+  background: var(--accent);
+}
+
+main ul li::marker,
+footer ul li::marker {
+  color: var(--accent);
+}
+
+/* Hero buttons keep their own light styling on the dark image. */
+#home .site-hero-actions .hero-social-link:hover {
+  border-color: rgba(240, 251, 252, 0.7);
+}
+
+.section-header-component::before {
+  background: var(--accent);
+}
