@@ -870,3 +870,98 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   font-size: var(--font-size-sm);
   line-height: 1.55;
 }
+
+/* Publication policy facts row. */
+.site-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem var(--space-5);
+  margin: var(--space-3) 0 var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.site-facts li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.site-facts li i {
+  color: var(--accent);
+  font-size: 1em;
+  transform: translateY(0.08em);
+}
+
+.site-facts li strong {
+  color: var(--text);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* FAQ accordion polish: chevron, hover tint, accent rule on the answer. */
+.site-faq summary {
+  padding: 0.85rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 6px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.site-faq summary:hover {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.site-faq summary::before {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  font-weight: 400;
+  font-size: 0.85em;
+  width: 1.1rem;
+  color: var(--accent);
+  transition: transform var(--transition-fast);
+}
+
+.site-faq details[open] summary::before {
+  content: "\F282";
+  transform: rotate(180deg);
+}
+
+.site-faq details p {
+  margin: 0.15rem 0 1rem 1.7rem;
+  padding: 0.1rem 0 0.1rem 0.9rem;
+  border-left: 2px solid var(--accent-soft);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.genai-section-copy .site-faq-contact {
+  margin: var(--space-4) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+@media (max-width: 767px) {
+  .site-facts {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Facts row: three equal columns on desktop. */
+@media (min-width: 768px) {
+  .site-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  .site-facts li {
+    display: flex;
+  }
+}
