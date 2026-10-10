@@ -424,20 +424,35 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   text-align: left;
 }
 
-/* Topic sub-points: a two-column, normal-weight list that stays readable. */
+/* Topic sub-points: a soft inset panel with a small-caps label and two aligned columns. */
 .bento-topic .site-topic-list {
-  columns: 2;
-  column-gap: var(--space-5);
-  margin: var(--space-3) 0 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem var(--space-5);
+  margin: var(--space-4) 0 0;
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  background: var(--surface-muted);
   list-style: none;
+}
+
+.bento-topic .site-topic-list::before {
+  content: "Topics include, but are not limited to";
+  grid-column: 1 / -1;
+  margin-bottom: 0.35rem;
+  color: var(--text-subtle);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .bento-topic .site-topic-list li {
   position: relative;
-  break-inside: avoid;
-  margin: 0 0 0.45rem;
-  padding-left: 1rem;
+  margin: 0;
+  padding-left: 1.1rem;
   color: var(--text);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: var(--font-size-sm);
@@ -450,16 +465,21 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.62em;
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 50%;
+  top: 0.72em;
+  width: 0.55rem;
+  height: 2px;
+  border-radius: 1px;
   background: var(--accent);
-  opacity: 0.8;
+  opacity: 0.7;
+}
+
+html[data-theme="dark"] .bento-topic .site-topic-list {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 @media (max-width: 767px) {
   .bento-topic .site-topic-list {
-    columns: 1;
+    grid-template-columns: 1fr;
+    padding: var(--space-3) var(--space-4);
   }
 }
