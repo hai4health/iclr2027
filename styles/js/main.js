@@ -8,11 +8,11 @@
 
   const getThemeChoice = () => {
     const storedTheme = localStorage.getItem(themeStorageKey);
-    return themeChoices.includes(storedTheme) ? storedTheme : 'light';
+    return themeChoices.includes(storedTheme) ? storedTheme : 'dark';
   };
 
   const resolveTheme = (choice) => {
-    return themeChoices.includes(choice) ? choice : 'light';
+    return themeChoices.includes(choice) ? choice : 'dark';
   };
 
   const applyTheme = (choice) => {
