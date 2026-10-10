@@ -353,3 +353,113 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
     text-align: left;
   }
 }
+
+/* Call for Papers polish: unified type in topic cards, tag pills, format icons, two-column how-to. */
+.bento-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.site-format-grid {
+  align-items: stretch;
+}
+
+.site-format-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-format-card h4 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-format-card h4 i {
+  font-size: 1.15em;
+  color: var(--accent);
+}
+
+.site-howto {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.site-howto-item {
+  padding: var(--space-3) 0 var(--space-3) var(--space-3);
+  border-left: 3px solid var(--accent-soft);
+}
+
+.site-howto-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.genai-section-copy .site-howto-item p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  .site-howto {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ragged-right format cards on all widths. */
+
+.genai-section-copy .site-format-card p {
+  text-align: left;
+}
+
+/* Topic sub-points: a two-column, normal-weight list that stays readable. */
+.bento-topic .site-topic-list {
+  columns: 2;
+  column-gap: var(--space-5);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bento-topic .site-topic-list li {
+  position: relative;
+  break-inside: avoid;
+  margin: 0 0 0.45rem;
+  padding-left: 1rem;
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.bento-topic .site-topic-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .bento-topic .site-topic-list {
+    columns: 1;
+  }
+}
