@@ -1142,3 +1142,245 @@ html[data-theme="dark"] #call-for-papers .genai-section-copy > p.site-policy {
     display: none;
   }
 }
+
+/* Navigation bar: flat translucent bar, underline for the active link, switcher inline, phone menu. */
+#header {
+  padding: 0.55rem 1rem;
+  background: var(--glass-bg-strong);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+
+.navbar-container {
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+
+#navbar {
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: auto;
+  gap: 0.25rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-link,
+.nav-link.active,
+.nav-link:active,
+.nav-link:hover,
+html[data-theme="dark"] .nav-link.active,
+html[data-theme="dark"] .nav-link:active,
+html[data-theme="dark"] .nav-link:hover {
+  position: relative;
+  padding: 0.45rem 0.65rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-link:active {
+  color: var(--text) !important;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  right: 0.65rem;
+  bottom: 0.15rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.theme-switcher,
+html[data-theme="dark"] .theme-switcher {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none !important;
+  flex-direction: row;
+  gap: 2px;
+  margin-left: 0.75rem;
+  padding: 3px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.theme-option {
+  width: 30px;
+  min-height: 30px;
+  font-size: 0.85rem;
+}
+
+.theme-option:hover {
+  background: var(--surface);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.theme-option[aria-pressed="true"],
+html[data-theme="dark"] .theme-option[aria-pressed="true"] {
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: var(--shadow-sm);
+  transform: none;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .site-navbar-logo {
+    height: 42px;
+  }
+
+  .site-navbar-title {
+    font-size: 1.02rem;
+  }
+
+  .nav-link,
+  .nav-link.active,
+  .nav-link:active,
+  .nav-link:hover {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .nav-link::after {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-container {
+    flex-wrap: nowrap;
+    gap: 0.6rem;
+  }
+
+  .navbar-title-group {
+    flex: 1 1 auto !important;
+    min-width: 0;
+    max-width: none;
+  }
+
+  #navbar {
+    display: none;
+    margin-left: 0;
+  }
+
+  #navbar.navbar-mobile {
+    display: flex;
+    gap: 0;
+    padding: 0.5rem 1.25rem 0.75rem;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  #navbar.navbar-mobile .nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+  }
+
+  #navbar.navbar-mobile .nav-link:last-child {
+    border-bottom: 0;
+  }
+
+  #navbar.navbar-mobile .nav-link::after {
+    display: none;
+  }
+
+  .theme-switcher,
+  html[data-theme="dark"] .theme-switcher {
+    margin-left: 0;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-navbar-logo {
+    height: 34px;
+  }
+
+  .site-navbar-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Keep the bar on one line between 992 and 1320px; the template stacks it there. */
+@media (min-width: 992px) and (max-width: 1320px) {
+  .navbar-title-group {
+    justify-content: flex-start;
+    width: auto !important;
+  }
+
+  #navbar {
+    flex: 0 1 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-end !important;
+    height: 100%;
+    gap: 0.25rem;
+  }
+}
+
+/* Phone menu: natural height, links from the top. */
+@media (max-width: 991px) {
+  #navbar.navbar-mobile {
+    height: auto;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+}

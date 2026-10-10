@@ -41,12 +41,6 @@
     rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="images/iclr.svg">
   <style>
-    @media (max-width: 991px) {
-      #navbar {
-        display: none !important;
-      }
-    }
-
     #header {
       position: sticky;
       top: 0;
@@ -79,7 +73,7 @@
         <a href="#home" class="navbar-title site-navbar-title" style="color: var(--color-primary); font-weight: bold; font-family: 'Palatino', 'Palatino Linotype', serif; display: flex; align-items: center; justify-content: flex-start; width: auto; gap: 1rem;">Human-Centered AI for Health</a>
       </div>
 
-      <nav id="navbar" class="navbar" style="display: flex; justify-content: flex-end;">
+      <nav id="navbar" class="navbar">
         <a class="nav-link scrollto" href="#speakers">Speakers</a>
         <a class="nav-link scrollto" href="#schedule">Agenda</a>
         <a class="nav-link scrollto" href="#call-for-papers">Call for Papers</a>
@@ -95,6 +89,7 @@
           <span>Dark</span>
         </button>
       </div>
+      <button class="mobile-nav-toggle bi bi-list" type="button" aria-label="Open menu" aria-controls="navbar"></button>
     </div>
   </header><!-- End Header -->
 
