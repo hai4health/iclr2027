@@ -137,3 +137,22 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* Keynote speakers grouped by thematic area. */
+.site-speaker-group {
+  margin: var(--space-6) 0 var(--space-4);
+  text-align: center;
+}
+
+#speakers .genai-people-grid + .site-speaker-group {
+  margin-top: var(--space-7);
+}
+
+/* Panel descriptions under the agenda timeline. */
+.site-panels {
+  margin-top: var(--space-6);
+}
+
+.site-panels h3 {
+  margin-bottom: var(--space-3);
+}

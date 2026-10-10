@@ -1,6 +1,6 @@
 # Human-Centered AI for Health @ ICLR 2027
 
-Website for the ICLR 2027 workshop **Human-Centered AI for Health: Multimodal Learning and Self-Evolving Agents**.
+Website for the ICLR 2027 workshop **Human-Centered AI for Health**.
 Live site: https://hai4health.github.io/iclr2027/
 
 ## Updating the site
