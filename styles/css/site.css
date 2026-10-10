@@ -487,59 +487,7 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
 /* Call for Papers: calmer text setting. Ragged-right, comfortable measure, cards instead of stacked bullets. */
 #call-for-papers .genai-section-copy > p,
 #call-for-papers .genai-section-copy > ul.genai-list {
-  max-width: 76ch;
-  text-align: left;
-}
-
-#call-for-papers .genai-cfp-about + p {
-  font-size: var(--font-size-md);
-  line-height: 1.7;
-  color: var(--text);
-}
-
-.site-aims {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3) var(--space-4);
-  margin: var(--space-3) 0 var(--space-6);
-}
-
-.site-aim {
-  display: flex;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius-md);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-.site-aim-num {
-  flex: 0 0 auto;
-  width: 1.75rem;
-  height: 1.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  color: var(--color-primary);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-}
-
-.site-aim strong {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: var(--text);
-  font-size: var(--font-size-sm);
-}
-
-.genai-section-copy .site-aim p {
-  margin: 0;
-  color: var(--text-muted);
-  font-size: var(--font-size-sm);
-  line-height: 1.55;
+  max-width: 92ch;
   text-align: left;
 }
 
@@ -594,4 +542,93 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
 
 #call-for-papers .genai-section-copy > p.site-wide {
   max-width: none;
+}
+
+/* About: thesis on the left, aims as a quiet numbered list on the right. */
+.site-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: var(--space-6) var(--space-7);
+  align-items: start;
+  margin: var(--space-3) 0 var(--space-6);
+}
+
+.genai-section-copy .site-about-text p {
+  text-align: left;
+  line-height: 1.7;
+}
+
+.genai-section-copy .site-about-text p:first-child {
+  color: var(--text);
+  font-size: var(--font-size-md);
+}
+
+.site-about-aims {
+  padding-left: var(--space-5);
+  border-left: 1px solid var(--border);
+}
+
+.genai-section-copy .site-about-aims .site-subhead {
+  margin-top: 0.15rem;
+}
+
+.site-aims {
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: aim;
+}
+
+.site-aims li {
+  position: relative;
+  padding-left: 2rem;
+  counter-increment: aim;
+}
+
+.site-aims li + li {
+  margin-top: var(--space-3);
+}
+
+.site-aims li::before {
+  content: counter(aim, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.04em;
+}
+
+.site-aims strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--text);
+  font-size: var(--font-size-sm);
+}
+
+.genai-section-copy .site-aims p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+  text-align: left;
+}
+
+@media (max-width: 991px) {
+  .site-about {
+    grid-template-columns: 1fr;
+  }
+
+  .site-about-aims {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+/* Format cards: title on one line, page-limit pill beneath, the same on all three. */
+.site-format-card header {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
 }
