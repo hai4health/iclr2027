@@ -1563,3 +1563,42 @@ html[data-theme="dark"] .site-footer {
 .site-footer-brand .site-footer-meta span {
   display: block;
 }
+
+/* Topic sub-points: flowing columns instead of a row-aligned grid, so no holes beside long items. */
+.bento-topic .site-topic-list {
+  display: block;
+  columns: 2;
+  column-gap: var(--space-5);
+}
+
+.bento-topic .site-topic-list::before {
+  display: block;
+  column-span: all;
+  margin-bottom: 0.6rem;
+}
+
+.bento-topic .site-topic-list li {
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+}
+
+.bento-topic .site-topic-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .bento-topic .site-topic-list {
+    columns: 1;
+  }
+}
+
+/* Slightly tighter rhythm between sections (template: 3.75rem top and bottom). */
+section:not(.hero) {
+  padding: 3rem 0;
+}
+
+/* Pin the hero artwork to the hero itself, not the viewport. */
+#home.health-hero {
+  position: relative;
+  overflow: hidden;
+}
