@@ -632,3 +632,9 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   align-items: flex-start;
   gap: 0.4rem;
 }
+
+/* Short aim descriptions: balance line lengths so no line ends on a stray word or two. */
+.genai-section-copy .site-aims p,
+.genai-section-copy .site-about-text p {
+  text-wrap: balance;
+}
