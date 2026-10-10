@@ -180,3 +180,18 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 .footer-text {
   text-wrap: pretty;
 }
+
+/* Hero subtitle: keep key phrases intact and break after "Self-Evolving Agents," on wide screens. */
+.hero-title-subtitle {
+  text-wrap: wrap;
+}
+
+.site-nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .site-hero-break {
+    display: none;
+  }
+}
