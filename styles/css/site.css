@@ -195,3 +195,161 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
     display: none;
   }
 }
+
+/* Call for Papers: at-a-glance strip, compact format cards, subheads. */
+.site-glance {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-4);
+  align-items: center;
+  margin: var(--space-5) 0 var(--space-6);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-glance-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.site-glance-tile {
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid var(--accent);
+}
+
+.site-glance-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.site-glance-tile strong {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--text);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.site-glance-action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.site-glance-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0.65rem 0.95rem;
+  border: 1px solid var(--button);
+  border-radius: 4px;
+  background: var(--button);
+  color: var(--accent-contrast);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  opacity: 0.75;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.site-glance-button em {
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.site-glance-note {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+}
+
+.site-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.site-format-card {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-format-card header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: var(--space-3);
+}
+
+.site-format-card h4 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+}
+
+.genai-section-copy .site-format-card p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+}
+
+.genai-section-copy .site-subhead {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--font-size-md);
+}
+
+@media (max-width: 991px) {
+  .site-glance {
+    grid-template-columns: 1fr;
+  }
+
+  .site-glance-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .site-glance-action {
+    align-items: flex-start;
+  }
+
+  .site-format-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-glance-tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .site-glance-button,
+  .site-glance-note {
+    white-space: normal;
+  }
+}
+
+/* Phones: ragged-right body text instead of justified, which leaves wide gaps at narrow widths. */
+@media (max-width: 767px) {
+  .genai-section-copy p,
+  .genai-section-copy li,
+  .bento-desc,
+  .site-format-card p {
+    text-align: left;
+  }
+}
