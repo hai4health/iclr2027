@@ -335,7 +335,7 @@ section {
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: #020d0a url("../../public/hero.png") center 62% / cover no-repeat;
+  background: #020d0a url("../../public/hero.jpg") center 62% / cover no-repeat;
 }
 
 .health-hero-art svg {
@@ -621,7 +621,7 @@ html[data-theme="dark"] .health-hero .hero-workshop-text {
 
 @media (max-width: 768px) {
   .health-hero-art {
-    background-image: url("../../public/hero-mobile.png");
+    background-image: url("../../public/hero-mobile.jpg");
     background-position: center center;
   }
 

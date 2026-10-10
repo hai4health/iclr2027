@@ -1602,3 +1602,46 @@ section:not(.hero) {
   position: relative;
   overflow: hidden;
 }
+
+/* "Tentative" as a small tag beside a section title. */
+.section-header-title .site-tag {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.6rem;
+  padding: 0.22rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.68rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  transform: translateY(-0.15em);
+}
+
+/* Keyboard focus rings on the interactive elements this site adds. */
+.nav-link:focus-visible,
+.site-hero-actions a:focus-visible,
+.site-hero-scroll:focus-visible,
+.mobile-nav-toggle:focus-visible,
+.site-faq summary:focus-visible,
+.site-footer a:focus-visible,
+.organizer-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Respect reduced-motion: stop the hero's drifting line art and waves. */
+@media (prefers-reduced-motion: reduce) {
+  .health-hero-art *,
+  .health-wave-overlay * {
+    animation: none !important;
+  }
+
+  .fade-in {
+    transition: none;
+  }
+}
