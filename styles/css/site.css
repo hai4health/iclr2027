@@ -21,15 +21,6 @@
   }
 }
 
-/* ICLR wordmark in the dark footer. */
-.site-footer-logo a {
-  display: block;
-}
-
-.site-footer-logo img {
-  filter: brightness(0) invert(1);
-  opacity: 0.9;
-}
 
 
 /* Phones: let the long title wrap to two lines and stop short of the theme switcher. */
@@ -1383,4 +1374,192 @@ html[data-theme="dark"] .theme-option[aria-pressed="true"] {
     justify-content: flex-start;
     align-items: stretch;
   }
+}
+
+/* Footer: separated from the page, three balanced columns, aligned dates, quiet bottom line. */
+.site-footer {
+  padding: var(--space-7) 0 var(--space-5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #141416;
+}
+
+html[data-theme="dark"] .site-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  background: #0b0b0c;
+}
+
+.site-footer .container {
+  max-width: var(--container-max-width);
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.site-footer-brand img {
+  display: block;
+  width: 104px;
+  height: auto;
+  margin-bottom: var(--space-3);
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.site-footer-brand strong {
+  display: block;
+  color: var(--footer-text);
+  font-family: 'Palatino', 'Palatino Linotype', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.site-footer-brand > span {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  color: var(--footer-muted);
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+.site-footer-col strong {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--footer-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+.site-footer-col a,
+.site-footer-col .site-footer-note {
+  display: block;
+  margin-top: 0.45rem;
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+}
+
+.site-footer-col a {
+  color: #d8dadf;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-footer-col a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer-col .site-footer-note {
+  margin-top: var(--space-3);
+  color: var(--footer-muted);
+  font-size: var(--font-size-xs);
+  text-wrap: pretty;
+}
+
+.site-footer-dates {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.45rem 0.9rem;
+  margin: 0.45rem 0 0;
+}
+
+.site-footer-dates dt {
+  color: var(--footer-muted);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer-dates dd {
+  margin: 0;
+  color: #d8dadf;
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.site-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem var(--space-5);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--footer-muted);
+  font-size: var(--font-size-xs);
+}
+
+.site-footer-bottom a {
+  color: var(--footer-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer-bottom a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .site-footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575px) {
+  .site-footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .site-footer-bottom {
+    flex-direction: column;
+  }
+}
+
+/* Footer wrap fixes: date labels on one line, brand title balanced, date line stacked. */
+.site-footer-dates dt {
+  white-space: nowrap;
+}
+
+.site-footer-brand strong {
+  text-wrap: balance;
+}
+
+.site-footer-brand > span {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.site-footer-dot {
+  display: none;
+}
+
+.site-footer-brand .site-footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.site-footer-brand .site-footer-meta span {
+  display: block;
 }
