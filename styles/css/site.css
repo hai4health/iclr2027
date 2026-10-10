@@ -858,86 +858,15 @@ html[data-theme="dark"] .bento-topic .site-topic-list {
   margin-bottom: 0;
 }
 
-/* Topics of Interest: three side-by-side pillars instead of stacked rows. */
-#call-for-papers .bento-section {
-  display: block;
-  max-width: none;
-  padding: 0;
-  border-bottom: 0;
+
+/* Topics intro: one short lead line, the qualifiers in smaller muted text. */
+#call-for-papers .genai-section-copy > p.site-topics-lead {
+  margin-bottom: var(--space-2);
+  color: var(--text);
 }
 
-#call-for-papers .bento-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
-  margin: var(--space-4) 0 var(--space-6);
-}
-
-#call-for-papers .bento-topic {
-  display: block;
-  padding: var(--space-4) var(--space-4) var(--space-5);
-  border: 1px solid var(--border);
-  border-top: 3px solid var(--accent);
-  border-radius: var(--border-radius-md);
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-#call-for-papers .bento-topic .bento-num {
-  display: block;
-  margin: 0 0 0.35rem;
-  color: var(--accent);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.08em;
-}
-
-#call-for-papers .bento-topic .bento-num::before {
-  content: "0";
-}
-
-#call-for-papers .bento-topic .bento-title {
-  font-size: 1.2rem;
-  line-height: 1.3;
-}
-
-#call-for-papers .bento-topic .bento-desc {
-  margin: var(--space-3) 0 0;
+#call-for-papers .genai-section-copy > p.site-topics-aside {
+  color: var(--text-muted);
   font-size: var(--font-size-sm);
   line-height: 1.55;
-}
-
-#call-for-papers .bento-topic .site-topic-list {
-  grid-template-columns: 1fr;
-  gap: 0.45rem;
-  margin: var(--space-4) 0 0;
-  padding: var(--space-4) 0 0;
-  border: 0;
-  border-top: 1px solid var(--border);
-  border-radius: 0;
-  background: transparent;
-}
-
-#call-for-papers .bento-topic .site-topic-list::before {
-  margin-bottom: 0.2rem;
-}
-
-#call-for-papers .bento-topic .site-topic-list li {
-  font-size: 0.8125rem;
-  line-height: 1.45;
-  padding-left: 0.95rem;
-}
-
-#call-for-papers .bento-topic .site-topic-list li::before {
-  width: 0.45rem;
-}
-
-html[data-theme="dark"] #call-for-papers .bento-topic .site-topic-list {
-  background: transparent;
-}
-
-@media (max-width: 991px) {
-  #call-for-papers .bento-list {
-    grid-template-columns: 1fr;
-  }
 }
